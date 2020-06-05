@@ -1,0 +1,33 @@
+{
+	"name": "babel-learn-first",
+	"version": "1.0.0",
+	"description": "Learn babel how to compiler with babel verison > 7.4",
+	"main": "index.js",
+	"scripts": {
+		"compiler": "babel src --out-dir lib --watch"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/luotongzhou/babel-learn-first.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/luotongzhou/babel-learn-first/issues"
+	},
+	"homepage": "https://github.com/luotongzhou/babel-learn-first#readme",
+	"devDependencies": {
+		"@babel/cli": "^7.8.4",
+		"@babel/core": "^7.9.6",
+		"@babel/plugin-proposal-class-properties": "^7.8.3",
+		"@babel/plugin-transform-arrow-functions": "^7.8.3",
+		"@babel/plugin-transform-for-of": "^7.9.0",
+		"@babel/plugin-transform-runtime": "^7.10.1",
+		"@babel/preset-env": "^7.9.6"
+	},
+	"dependencies": {
+		"@babel/runtime": "^7.10.2",
+		"core-js": "3"
+	}
+}
