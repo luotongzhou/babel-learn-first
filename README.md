@@ -126,7 +126,7 @@ const result = new Promise((resovle, reject) => {
 ### polyfill
 > As of Babel 7.4.0, this package has been deprecated in favor of directly including core-js/stable (to polyfill ECMAScript features) and regenerator-runtime/runtime (needed to use transpiled generator functions):
 
-官方已经在babel 7.4以后废弃了@babel/polyfill这个包了，所以要使用polyfill得单独安装`core-js`和`regenerator-runtime`,这里也只讨论babel 7.4以后的用法。
+官方已经在babel 7.4以后废弃了@babel/polyfill这个包了，所以要使用polyfill得单独安装`core-js`和`regenerator-runtime`,这里也只讨论babel 7.4以后的用法
 配合引入垫片polyfill的方式根据`useBuiltIns`的不同可以分为三种，即 `entry`, `usage` 和 `false`
 ```
 {
@@ -141,8 +141,8 @@ const result = new Promise((resovle, reject) => {
 	]
 }
 ```
-官方推荐使用`"useBuiltIns": "usage"`,`usage`会自动检测代码中用到的功能自动引入模块,`false`只做了语法转换, `entry`引入了所有的es扩展包。
-> 如果使用`entry`的方式，必须在入口文件`import 'core-js'`和`import 'regenerator-runtime/runtime'`，而使用`usage`的方式不需要,它会自动帮我们引入需要的包,所以推荐`usage`的方式引入`polyfill`
+官方推荐使用`"useBuiltIns": "usage"`,`usage`会自动检测代码中用到的功能自动引入模块,`false`只做了语法转换, `entry`根据您browserlistrc引入了浏览器不支持的es扩展包。
+如果使用`entry`的方式，必须在入口文件`import 'core-js'`和`import 'regenerator-runtime/runtime'`，而使用`usage`的方式不需要,它会自动帮我们引入需要的包,所以推荐`usage`的方式引入`polyfill`
 另外使用`usage`和`entry`必须指定`core-js`的版本,不指定控制台会报错提示我们安装`core-js`,我们指定版本为`3`,默认为`2`,使用`npm install --save core-js@3`安装,因为`core-js@2`版本不会再添加新的特性，所以建议使用`core-js@3`
 > When either the usage or entry options are used, @babel-preset-env will add direct references to core-js modules as bare imports (or requires). This means core-js will be resolved relative to the file itself and needs to be accessible.
 
