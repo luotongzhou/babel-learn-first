@@ -1,43 +1,62 @@
-const fn = () => {
-	console.log('a')
-}
+import React, { useEffect } from 'react'
+import { Button } from 'antd'
+// import { hello } from './hello'
+const { hello } = require('./hello')
+import hello2 from './hello'
+import { useToggle } from 'ahooks'
 
-const list = [1, 2, 3]
-for (let i of list) {
-	console.log(i)
-}
+export const App = () => {
+	const [state, { toggle }] = useToggle()
 
-class React {
-	constructor() {
-		this.name = 'react'
+	const onClick = () => {
+		console.log('React')
 	}
-	init() {
-		console.log(this.name)
-	}
+	useEffect(() => {
+		console.log(hello)
+		console.log(hello2)
+	})
+	return <Button onClick={onClick}>React</Button>
 }
 
-const react = new React()
-react.init()
+// const fn = () => {
+// 	console.log('a')
+// }
 
-class Vue {
-	constructor() {
-		this.name = 'vue'
-	}
-	init() {
-		console.log(this.name)
-	}
-}
+// const list = [1, 2, 3]
+// for (let i of list) {
+// 	console.log(i)
+// }
 
-const vue = new Vue()
-vue.init()
+// class React {
+// 	constructor() {
+// 		this.name = 'react'
+// 	}
+// 	init() {
+// 		console.log(this.name)
+// 	}
+// }
 
-const isHas = [1, 2, 3].includes(2)
+// const react = new React()
+// react.init()
 
-const result = new Promise((resovle, reject) => {
-	resovle('success')
-})
+// class Vue {
+// 	constructor() {
+// 		this.name = 'vue'
+// 	}
+// 	init() {
+// 		console.log(this.name)
+// 	}
+// }
 
-const fetchData = async () => {
-	const a = await result()
-	console.log(a)
-}
+// const vue = new Vue()
+// vue.init()
+// const isHas = [1, 2, 3].includes(2)
+
+// const result = new Promise((resovle, reject) => {
+// 	resovle('success')
+// })
+
+// const fetchData = async () => {
+// 	const a = await result()
+// 	console.log(a)
+// }

@@ -11,13 +11,30 @@
 // 	"plugins": ["@babel/plugin-transform-runtime"]
 // }
 {
-	"presets": [["@babel/preset-env"]],
+	"presets": [
+		[
+			"@babel/preset-env",
+			{
+				// "targets": {
+				// 	"esmodules": false
+				// }
+				// "modules": false
+			}
+		],
+		["@babel/preset-react"]
+	],
 	"plugins": [
 		[
 			"@babel/plugin-transform-runtime",
 			{
 				"corejs": 3
 			}
-		]
+		],
+		[
+			"import",
+			{ "libraryName": "antd", "libraryDirectory": "es", "style": true },
+			"antd"
+		],
+		["import", { "libraryName": "ahooks", "libraryDirectory": "es" }, "ahooks"]
 	]
 }
